@@ -119,6 +119,34 @@ main #Infos p:last-child {
   margin-top: 1rem;
 }
 
+main #Price div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+main #Price div div span {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+main #Price div div .descount {
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  background-color: var(--pale-orange);
+}
+
+main #Price div div .original-price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-decoration: line-through;
+  color: var(--grayish-blue);
+}
+
 @keyframes fade {
   from {
     opacity: 0.4;
