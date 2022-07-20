@@ -9,14 +9,17 @@
   --black: hsla(0, 0%, 0%, 0.5);
 }
 
-header {
-  padding: 2rem;
+.container {
+  max-width: 422px;
+  padding: 0 30px;
+  margin: 0 auto;
 }
 
 header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 2rem 0;
 }
 
 header nav div img:first-child {
@@ -34,18 +37,18 @@ header nav div:last-child .avatar {
   width: 30%;
 }
 
-main section .slideshow-container {
+main #Product .slideshow-container {
   max-width: 422px;
   position: relative;
   margin: auto;
 }
 
-main section .slideshow-container .mySlides {
+main #Product .slideshow-container .mySlides {
   display: none;
 }
 
-main section .slideshow-container .prev,
-main section .slideshow-container .next {
+main #Product .slideshow-container .prev,
+main #Product .slideshow-container .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -61,22 +64,22 @@ main section .slideshow-container .next {
   background-color: var(--white);
 }
 
-main section .slideshow-container .next {
+main #Product .slideshow-container .next {
   right: 0;
   margin-right: 12px;
   border-radius: 50%;
 }
 
-main section .slideshow-container .prev:hover,
-main section .slideshow-container .next:hover {
+main #Product .slideshow-container .prev:hover,
+main #Product .slideshow-container .next:hover {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-main section .slideshow-container .mySlides .product-image {
+main #Product .slideshow-container .mySlides .product-image {
   width: 100%;
 }
 
-main section .slideshow-container .dots-container .dot {
+main #Product .slideshow-container .dots-container .dot {
   cursor: pointer;
   height: 15px;
   width: 15px;
@@ -92,9 +95,28 @@ main section .slideshow-container .dots-container .dot {
   background-color: #717171;
 }
 
-main section .slideshow-container .fade {
+main #Product .slideshow-container .fade {
   animation-name: fade;
   animation-duration: 1.5s;
+}
+
+main #Infos .orange {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--orange);
+  margin-top: 0.25rem;
+}
+
+main #Infos h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+main #Infos p:last-child {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-top: 1rem;
 }
 
 @keyframes fade {
