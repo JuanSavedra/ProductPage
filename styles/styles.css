@@ -156,10 +156,31 @@ main #Cart div {
   margin-top: 2rem;
   background-color: var(--light-grayish-blue);
   padding: 1.5rem 2rem;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
-main #Cart div span {
+main #Cart button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--orange);
+  width: 100%;
+  padding: 1.5rem 2rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  border: none;
+  text-decoration: none;
+  color: var(--white);
+}
+
+main #Cart button img {
+  margin-right: 1rem;
+  filter: brightness(3);
+  color: var(--white);
+}
+
+main #Cart div span,
+main #Cart button span {
   font-size: 1.25rem;
   font-weight: 700;
 }
