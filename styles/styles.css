@@ -60,7 +60,7 @@ main #Product .slideshow-container .next {
   transition: 0.6s ease;
   border-radius: 50%;
   user-select: none;
-  padding: 0.75rem 1rem;
+  padding: 1rem 1.1rem 0.75rem 1rem;
   background-color: var(--white);
 }
 
@@ -68,6 +68,7 @@ main #Product .slideshow-container .next {
   right: 0;
   margin-right: 12px;
   border-radius: 50%;
+  padding: 1rem 1rem 0.75rem 1.1rem;
 }
 
 main #Product .slideshow-container .prev:hover,
@@ -127,7 +128,7 @@ main #Price div {
 }
 
 main #Price div div span {
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -137,6 +138,7 @@ main #Price div div .descount {
   border-radius: 4px;
   padding: 0.5rem;
   margin-left: 0.5rem;
+  color: var(--orange);
   background-color: var(--pale-orange);
 }
 
@@ -145,6 +147,21 @@ main #Price div div .original-price {
   font-weight: bold;
   text-decoration: line-through;
   color: var(--grayish-blue);
+}
+
+main #Cart div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  background-color: var(--light-grayish-blue);
+  padding: 1.5rem 2rem;
+  border-radius: 4px;
+}
+
+main #Cart div span {
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 @keyframes fade {
