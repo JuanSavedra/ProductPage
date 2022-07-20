@@ -20,6 +20,45 @@
     <title>Product Page</title>
   </head>
   <body>
+    <header>
+      <nav>
+        <div>
+          <img src="./assets/icon-menu.svg" alt="Menu" />
+          <img src="./assets/logo.svg" alt="Logo" />
+        </div>
+        <div>
+          <img src="./assets/icon-cart.svg" alt="Carrinho de compras" />
+          <img class="avatar" src="./assets/image-avatar.png" alt="Avatar" />
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <img class="product-image" src="./assets/image-product-1.jpg" />
+          </div>
+          <div class="mySlides fade">
+            <img class="product-image" src="./assets/image-product-2.jpg" />
+          </div>
+          <div class="mySlides fade">
+            <img class="product-image" src="./assets/image-product-3.jpg" />
+          </div>
+          <div class="mySlides fade">
+            <img class="product-image" src="./assets/image-product-4.jpg" />
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br />
+        <div class="dots-container" style="text-align: center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+      </section>
+    </main>
     <script src="./scripts/script.js"></script>
   </body>
 </html>
