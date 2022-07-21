@@ -48,3 +48,15 @@ function DecreaseAmountOfProducts(value) {
 
   return value;
 }
+
+//Add to cart.
+let textOfProductsInCart = document.createElement("p");
+let productsInCart = 0;
+
+function AddToCart() {
+  let cart = document.querySelector(".cart-container");
+  productsInCart = amount;
+  textOfProductsInCart.innerHTML = productsInCart;
+  textOfProductsInCart.setAttribute("class", "quantity-in-cart");
+  cart.appendChild(textOfProductsInCart);
+}
