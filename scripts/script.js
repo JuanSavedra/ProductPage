@@ -1,16 +1,15 @@
 //Slideshow.
 let slideIndex = 1;
-ShowSlides(slideIndex);
 
-function PlusSlides(n) {
+const PlusSlides = (n) => {
   ShowSlides((slideIndex += n));
-}
+};
 
-function CurrentSlide(n) {
+const CurrentSlide = (n) => {
   ShowSlides((slideIndex = n));
-}
+};
 
-function ShowSlides(n) {
+const ShowSlides = (n) => {
   let i;
   let slides = document.querySelectorAll(".mySlides");
   let dots = document.querySelectorAll(".dot");
@@ -28,58 +27,60 @@ function ShowSlides(n) {
   }
 
   slides[slideIndex - 1].style.display = "block";
-}
+};
+
+ShowSlides(slideIndex);
 
 //Change Amount of Products.
 let amount = 1;
 let amountSpan = document.querySelector(".amount-of-products");
 
-function IncreaseAmountOfProducts(value) {
+const IncreaseAmountOfProducts = (value) => {
   amountSpan.textContent = amount += value;
   return value;
-}
+};
 
-function DecreaseAmountOfProducts(value) {
+const DecreaseAmountOfProducts = (value) => {
   let amountSpan = document.querySelector(".amount-of-products");
   if (amount > 0) {
     amountSpan.textContent = amount -= value;
   }
 
   return value;
-}
+};
 
 //Add to cart.
 let textOfProductsInCart = document.createElement("p");
 let productsInCart = 0;
 
-function AddToCart() {
+const AddToCart = () => {
   let cart = document.querySelector(".cart-container");
   productsInCart += amount;
   textOfProductsInCart.innerHTML = productsInCart;
   textOfProductsInCart.setAttribute("class", "quantity-in-cart");
   cart.appendChild(textOfProductsInCart);
-}
+};
 
 //Scroll
-function DisableScroll() {
+const DisableScroll = () => {
   TopScroll = window.pageYOffset || document.documentElement.scrollTop;
   (LeftScroll = window.pageXOffset || document.documentElement.scrollLeft)(
     (window.onscroll = function () {
       window.scrollTo(LeftScroll, TopScroll);
     })
   );
-}
+};
 
-function EnableScroll() {
+const EnableScroll = () => {
   window.onscroll = function () {};
-}
+};
 
 //Modal
 let modal = document.querySelector("#myModalCart");
 let cartButton = document.querySelector(".cart-button");
 let cartModalIsActive = false;
 
-function ModalCartControl() {
+const ModalCartControl = () => {
   if (!cartModalIsActive) {
     modal.style.display = "block";
     DisableScroll();
@@ -87,7 +88,7 @@ function ModalCartControl() {
     modal.style.display = "none";
     EnableScroll();
   }
-}
+};
 
 window.onclick = function (event) {
   if (event.target == modal) {
