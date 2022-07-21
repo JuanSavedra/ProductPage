@@ -26,7 +26,21 @@
           <h2>Cart</h2>
         </div>
         <div class="modal-cart-body">
-          <p>Your cart is empty.</p>
+          <!-- <p class="text-cart-modal">Your cart is empty.</p> -->
+          <div>
+            <img src="./assets/image-product-1.jpg" alt="Product Image" />
+            <div>
+              <p>Autumn Limited Edition...</p>
+              <span>
+                $125.00 x <span class="cart-quantity-of-product">1</span> /
+                <span class="cart-total-price">$125.00</span>
+              </span>
+            </div>
+            <a href="javascript:void(0);">
+              <img src="./assets/icon-delete.svg" alt="Remove" />
+            </a>
+          </div>
+          <a class="checkout-button" href="javascript:void(0);">Checkout</a>
         </div>
       </div>
     </div>
@@ -45,7 +59,7 @@
               href="javascript:void(0);"
               onclick="ModalCartControl()"
             >
-              <img src="./assets/icon-cart.svg" alt="Carrinho de compras" />
+              <img src="./assets/icon-cart.svg" alt="Cart" />
             </a>
           </div>
           <img class="avatar" src="./assets/image-avatar.png" alt="Avatar" />
@@ -68,10 +82,10 @@
             <img class="product-image" src="./assets/image-product-4.jpg" />
           </div>
           <a class="prev" onclick="PlusSlides(-1)"
-            ><img src="./assets/icon-previous.svg" alt="Anterior"
+            ><img src="./assets/icon-previous.svg" alt="Previous"
           /></a>
           <a class="next" onclick="PlusSlides(1)"
-            ><img src="./assets/icon-next.svg" alt="Próximo"
+            ><img src="./assets/icon-next.svg" alt="Next"
           /></a>
         </div>
         <br />
@@ -100,15 +114,15 @@
       <section id="Cart" class="container">
         <div>
           <a href="javascript:void(0);" onclick="DecreaseAmountOfProducts(1)">
-            <img src="./assets/icon-minus.svg" alt="Menos" />
+            <img src="./assets/icon-minus.svg" alt="Minus" />
           </a>
           <span class="amount-of-products">1</span>
           <a href="javascript:void(0);" onclick="IncreaseAmountOfProducts(1)">
-            <img src="./assets/icon-plus.svg" alt="Mais" />
+            <img src="./assets/icon-plus.svg" alt="Plus" />
           </a>
         </div>
         <button class="add-to-cart" onclick="AddToCart()">
-          <img src="./assets/icon-cart.svg" alt="Carrinho de compras" />
+          <img src="./assets/icon-cart.svg" alt="Cart" />
           <span>Add to cart</span>
         </button>
       </section>

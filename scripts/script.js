@@ -56,19 +56,31 @@ let productsInCart = 0;
 const AddToCart = () => {
   let cart = document.querySelector(".cart-container");
   productsInCart += amount;
-  textOfProductsInCart.innerHTML = productsInCart;
+  textOfProductsInCart.textContent = productsInCart;
   textOfProductsInCart.setAttribute("class", "quantity-in-cart");
   cart.appendChild(textOfProductsInCart);
+  cartIsEmpty = false;
+};
+
+//Cart Info.
+let cartIsEmpty = true;
+
+const ListProductsInTheCart = () => {
+  let textCart = document.querySelector("text-cart-modal");
+
+  if (cartIsEmpty) {
+    textCart.textContent = "Your cart is empty.";
+  } else {
+  }
 };
 
 //Scroll
 const DisableScroll = () => {
   TopScroll = window.pageYOffset || document.documentElement.scrollTop;
-  (LeftScroll = window.pageXOffset || document.documentElement.scrollLeft)(
+  (LeftScroll = window.pageXOffset || document.documentElement.scrollLeft),
     (window.onscroll = function () {
       window.scrollTo(LeftScroll, TopScroll);
-    })
-  );
+    });
 };
 
 const EnableScroll = () => {
