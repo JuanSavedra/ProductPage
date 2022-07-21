@@ -74,6 +74,11 @@ const ListProductsInTheCart = () => {
   }
 };
 
+const Checkout = () => {
+  alert("Pedido realizado!");
+  ModalCartControl();
+};
+
 //Scroll
 const DisableScroll = () => {
   TopScroll = window.pageYOffset || document.documentElement.scrollTop;
@@ -100,6 +105,8 @@ const ModalCartControl = () => {
     modal.style.display = "none";
     EnableScroll();
   }
+
+  cartModalIsActive = !cartModalIsActive;
 };
 
 window.onclick = function (event) {
