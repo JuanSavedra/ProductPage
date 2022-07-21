@@ -20,15 +20,33 @@
     <title>Sneakers</title>
   </head>
   <body>
+    <div id="myModalCart" class="modal-cart">
+      <div class="modal-cart-content">
+        <div class="modal-cart-header">
+          <h2>Cart</h2>
+        </div>
+        <div class="modal-cart-body">
+          <p>Your cart is empty.</p>
+        </div>
+      </div>
+    </div>
     <header class="container">
       <nav>
         <div>
-          <img src="./assets/icon-menu.svg" alt="Menu" />
+          <a href="javascript:void(0);">
+            <img src="./assets/icon-menu.svg" alt="Menu" />
+          </a>
           <img src="./assets/logo.svg" alt="Logo" />
         </div>
         <div>
           <div class="cart-container">
-            <img src="./assets/icon-cart.svg" alt="Carrinho de compras" />
+            <a
+              class="cart-button"
+              href="javascript:void(0);"
+              onclick="ModalCartControl()"
+            >
+              <img src="./assets/icon-cart.svg" alt="Carrinho de compras" />
+            </a>
           </div>
           <img class="avatar" src="./assets/image-avatar.png" alt="Avatar" />
         </div>
@@ -49,20 +67,14 @@
           <div class="mySlides fade">
             <img class="product-image" src="./assets/image-product-4.jpg" />
           </div>
-          <a class="prev" onclick="plusSlides(-1)"
+          <a class="prev" onclick="PlusSlides(-1)"
             ><img src="./assets/icon-previous.svg" alt="Anterior"
           /></a>
-          <a class="next" onclick="plusSlides(1)"
+          <a class="next" onclick="PlusSlides(1)"
             ><img src="./assets/icon-next.svg" alt="Próximo"
           /></a>
         </div>
         <br />
-        <div class="dots-container" style="text-align: center">
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-          <span class="dot" onclick="currentSlide(3)"></span>
-          <span class="dot" onclick="currentSlide(4)"></span>
-        </div>
       </section>
       <section id="Infos" class="container">
         <p class="orange">sneaker company</p>
@@ -90,7 +102,7 @@
           <a href="javascript:void(0);" onclick="DecreaseAmountOfProducts(1)">
             <img src="./assets/icon-minus.svg" alt="Menos" />
           </a>
-          <span class="amount-of-products">0</span>
+          <span class="amount-of-products">1</span>
           <a href="javascript:void(0);" onclick="IncreaseAmountOfProducts(1)">
             <img src="./assets/icon-plus.svg" alt="Mais" />
           </a>

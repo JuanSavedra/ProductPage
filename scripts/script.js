@@ -1,37 +1,37 @@
 //Slideshow.
 let slideIndex = 1;
-showSlides(slideIndex);
+ShowSlides(slideIndex);
 
-function plusSlides(n) {
-  showSlides((slideIndex += n));
+function PlusSlides(n) {
+  ShowSlides((slideIndex += n));
 }
 
-function currentSlide(n) {
-  showSlides((slideIndex = n));
+function CurrentSlide(n) {
+  ShowSlides((slideIndex = n));
 }
 
-function showSlides(n) {
+function ShowSlides(n) {
   let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
+  let slides = document.querySelectorAll(".mySlides");
+  let dots = document.querySelectorAll(".dot");
+
   if (n > slides.length) {
     slideIndex = 1;
   }
+
   if (n < 1) {
     slideIndex = slides.length;
   }
+
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
+
   slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
 }
 
 //Change Amount of Products.
-let amount = 0;
+let amount = 1;
 let amountSpan = document.querySelector(".amount-of-products");
 
 function IncreaseAmountOfProducts(value) {
@@ -57,7 +57,41 @@ function AddToCart() {
   productsInCart += amount;
   textOfProductsInCart.innerHTML = productsInCart;
   textOfProductsInCart.setAttribute("class", "quantity-in-cart");
-  amountSpan.textContent = 0;
-  amount = 0;
   cart.appendChild(textOfProductsInCart);
 }
+
+//Scroll
+function DisableScroll() {
+  TopScroll = window.pageYOffset || document.documentElement.scrollTop;
+  (LeftScroll = window.pageXOffset || document.documentElement.scrollLeft)(
+    (window.onscroll = function () {
+      window.scrollTo(LeftScroll, TopScroll);
+    })
+  );
+}
+
+function EnableScroll() {
+  window.onscroll = function () {};
+}
+
+//Modal
+let modal = document.querySelector("#myModalCart");
+let cartButton = document.querySelector(".cart-button");
+let cartModalIsActive = false;
+
+function ModalCartControl() {
+  if (!cartModalIsActive) {
+    modal.style.display = "block";
+    DisableScroll();
+  } else {
+    modal.style.display = "none";
+    EnableScroll();
+  }
+}
+
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    EnableScroll();
+  }
+};
