@@ -1,5 +1,4 @@
-//Slideshow
-
+//Slideshow.
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -29,4 +28,23 @@ function showSlides(n) {
   }
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
+}
+
+//Change Amount of Products.
+let amount = 0;
+
+function IncreaseAmountOfProducts(value) {
+  let amountSpan = document.querySelector(".amount-of-products");
+  amountSpan.textContent = amount += value;
+  return value;
+}
+
+function DecreaseAmountOfProducts(value) {
+  let amountSpan = document.querySelector(".amount-of-products");
+
+  if (amount > 0) {
+    amountSpan.textContent = amount -= value;
+  }
+
+  return value;
 }

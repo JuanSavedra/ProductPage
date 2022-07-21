@@ -27,7 +27,9 @@
           <img src="./assets/logo.svg" alt="Logo" />
         </div>
         <div>
-          <img src="./assets/icon-cart.svg" alt="Carrinho de compras" />
+          <div class="cart-container">
+            <img src="./assets/icon-cart.svg" alt="Carrinho de compras" />
+          </div>
           <img class="avatar" src="./assets/image-avatar.png" alt="Avatar" />
         </div>
       </nav>
@@ -85,11 +87,11 @@
       </section>
       <section id="Cart" class="container">
         <div>
-          <a href="javascript:void(0);">
+          <a href="javascript:void(0);" onclick="DecreaseAmountOfProducts(1)">
             <img src="./assets/icon-minus.svg" alt="Menos" />
           </a>
-          <span>0</span>
-          <a href="javascript:void(0);">
+          <span class="amount-of-products">0</span>
+          <a href="javascript:void(0);" onclick="IncreaseAmountOfProducts(1)">
             <img src="./assets/icon-plus.svg" alt="Mais" />
           </a>
         </div>
