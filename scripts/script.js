@@ -32,16 +32,15 @@ function showSlides(n) {
 
 //Change Amount of Products.
 let amount = 0;
+let amountSpan = document.querySelector(".amount-of-products");
 
 function IncreaseAmountOfProducts(value) {
-  let amountSpan = document.querySelector(".amount-of-products");
   amountSpan.textContent = amount += value;
   return value;
 }
 
 function DecreaseAmountOfProducts(value) {
   let amountSpan = document.querySelector(".amount-of-products");
-
   if (amount > 0) {
     amountSpan.textContent = amount -= value;
   }
@@ -55,8 +54,10 @@ let productsInCart = 0;
 
 function AddToCart() {
   let cart = document.querySelector(".cart-container");
-  productsInCart = amount;
+  productsInCart += amount;
   textOfProductsInCart.innerHTML = productsInCart;
   textOfProductsInCart.setAttribute("class", "quantity-in-cart");
+  amountSpan.textContent = 0;
+  amount = 0;
   cart.appendChild(textOfProductsInCart);
 }
