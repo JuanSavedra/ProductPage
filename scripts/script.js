@@ -60,22 +60,15 @@ const AddToCart = () => {
   textOfProductsInCart.setAttribute("class", "quantity-in-cart");
   cart.appendChild(textOfProductsInCart);
   cartIsEmpty = false;
+  ListProductsInTheCart();
 };
 
-//Cart Info.
+//Cart Modal Info.
+const modalCartBody = document.querySelector(".modal-cart-body");
 let cartIsEmpty = true;
 let totalPrice = 0;
-
-const modalCartBody = document.querySelector(".modal-cart-body");
-const divContainer = document.createElement("div");
-const imageProduct = document.createElement("img");
-const divInfos = document.createElement("div");
-const productName = document.createElement("p");
-const spanProductInfo = document.createElement("span");
-const spanTotalPrice = document.createElement("span");
-const buttonDelete = document.createElement("a");
-const iconDelete = document.createElement("img");
-const buttonCheckout = document.createElement("a");
+let isCreated = false;
+let createdElements = [];
 
 const ListProductsInTheCart = () => {
   let textCart = document.querySelector(".text-cart-modal");
@@ -86,57 +79,110 @@ const ListProductsInTheCart = () => {
   } else {
     textCart.textContent = "";
     totalPrice = 125.0 * productsInCart;
-    DefineHTMLElements();
-    CreatingElements();
+
+    if (!isCreated) {
+      CreateCartProducts();
+    } else {
+      RefreshCart();
+    }
   }
 };
 
+function CreateCartModalElements(type, content, src) {
+  let element = document.createElement(type);
+  element.textContent = content;
+
+  if (type === "img") {
+    element.src = src;
+  }
+
+  return element;
+}
+
 const DeleteProductsInTheCart = () => {
   const quantityInTheCart = document.querySelector(".quantity-in-cart");
-
   quantityInTheCart.parentNode.removeChild(quantityInTheCart);
-  buttonDelete.parentNode.removeChild(buttonDelete);
-  divContainer.parentNode.removeChild(divContainer);
-  imageProduct.parentNode.removeChild(imageProduct);
-  divInfos.parentNode.removeChild(divInfos);
-  productName.parentNode.removeChild(productName);
-  spanProductInfo.parentNode.removeChild(spanProductInfo);
-  spanTotalPrice.parentNode.removeChild(spanTotalPrice);
-  buttonCheckout.parentNode.removeChild(buttonCheckout);
+
+  for (let i = 0; i < createdElements.length; i++) {
+    createdElements[i].parentNode.removeChild(createdElements[i]);
+  }
 
   cartIsEmpty = true;
+  isCreated = false;
   productsInCart = 0;
   amount = 1;
   amountSpan.textContent = amount;
+  createdElements = [];
   ListProductsInTheCart();
 };
 
-const DefineHTMLElements = () => {
-  imageProduct.src = "../../assets/image-product-1.jpg";
-  productName.textContent = "Autumn Limited Edition...";
-  spanProductInfo.textContent = `$125.00 x ${productsInCart} / `;
-  spanTotalPrice.textContent = `${new Intl.NumberFormat("en-US", {
+const CreateCartProducts = () => {
+  createdElements.push(
+    modalCartBody.appendChild(CreateCartModalElements("div", null, null))
+  );
+
+  createdElements.push(
+    createdElements[0].appendChild(
+      CreateCartModalElements("img", null, "../../assets/image-product-1.jpg")
+    )
+  );
+
+  createdElements.push(
+    createdElements[0].appendChild(CreateCartModalElements("div", null, null))
+  );
+
+  createdElements.push(
+    createdElements[2].appendChild(
+      CreateCartModalElements("p", "Autumn Limited Edition...", null)
+    )
+  );
+
+  createdElements.push(
+    createdElements[2].appendChild(
+      CreateCartModalElements("span", `$125.00 x ${productsInCart} / `, null)
+    )
+  );
+
+  createdElements.push(
+    createdElements[4].appendChild(
+      CreateCartModalElements(
+        "span",
+        `${new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: "USD",
+        }).format(totalPrice)}`,
+        null
+      )
+    )
+  );
+
+  createdElements.push(
+    createdElements[0].appendChild(CreateCartModalElements("a", null, null))
+  );
+
+  createdElements.push(
+    createdElements[6].appendChild(
+      CreateCartModalElements("img", null, "../../assets/icon-delete.svg")
+    )
+  );
+
+  createdElements.push(
+    modalCartBody.appendChild(CreateCartModalElements("a", "Checkout", null))
+  );
+
+  createdElements[5].setAttribute("class", "cart-total-price");
+  createdElements[6].setAttribute("onclick", "DeleteProductsInTheCart()");
+  createdElements[8].setAttribute("class", "checkout-button");
+  createdElements[8].setAttribute("onclick", "Checkout()");
+  isCreated = true;
+};
+
+const RefreshCart = () => {
+  totalPrice = 125.0 * productsInCart;
+  createdElements[5].textContent = `${new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
   }).format(totalPrice)}`;
-  iconDelete.src = "../../assets/icon-delete.svg";
-  buttonCheckout.textContent = "Checkout";
-  spanTotalPrice.setAttribute("class", "cart-total-price");
-  buttonCheckout.setAttribute("class", "checkout-button");
-  buttonCheckout.setAttribute("onclick", "Checkout()");
-  buttonDelete.setAttribute("onclick", "DeleteProductsInTheCart()");
-};
-
-const CreatingElements = () => {
-  buttonDelete.appendChild(iconDelete);
-  modalCartBody.appendChild(divContainer);
-  divContainer.appendChild(imageProduct);
-  divContainer.appendChild(divInfos);
-  divInfos.appendChild(productName);
-  divInfos.appendChild(spanProductInfo);
-  divContainer.appendChild(buttonDelete);
-  spanProductInfo.appendChild(spanTotalPrice);
-  modalCartBody.appendChild(buttonCheckout);
 };
 
 //Checkout.
@@ -164,10 +210,9 @@ const EnableScroll = () => {
 let modal = document.querySelector("#myModalCart");
 let cartButton = document.querySelector(".cart-button");
 let cartModalIsActive = false;
+let rendered = false;
 
 const ModalCartControl = () => {
-  ListProductsInTheCart();
-
   if (!cartModalIsActive) {
     modal.style.display = "block";
     DisableScroll();
