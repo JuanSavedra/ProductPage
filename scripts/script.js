@@ -139,6 +139,8 @@ const CreatingElements = () => {
 const Checkout = () => {
   alert("Pedido realizado!");
   ModalCartControl();
+  DeleteProductsInTheCart();
+  ListProductsInTheCart();
 };
 
 //Scroll.
