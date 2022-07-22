@@ -64,22 +64,63 @@ const AddToCart = () => {
 
 //Cart Info.
 let cartIsEmpty = true;
+let totalPrice;
+const modalCartBody = document.querySelector(".modal-cart-body");
+const divContainer = document.createElement("div");
+const imageProduct = document.createElement("img");
+const divInfos = document.createElement("div");
+const productName = document.createElement("p");
+const spanProductInfo = document.createElement("span");
+const spanTotalPrice = document.createElement("span");
+const buttonDelete = document.createElement("a");
+const iconDelete = document.createElement("img");
+const buttonCheckout = document.createElement("a");
 
 const ListProductsInTheCart = () => {
-  let textCart = document.querySelector("text-cart-modal");
+  let textCart = document.querySelector(".text-cart-modal");
 
   if (cartIsEmpty) {
+    modalCartBody.appendChild(textCart);
     textCart.textContent = "Your cart is empty.";
   } else {
+    textCart.textContent = "";
+    totalPrice = 125.0 * productsInCart;
+    DefineHTMLElements();
+    CreatingElements();
   }
 };
 
+const DefineHTMLElements = () => {
+  imageProduct.src = "../../assets/image-product-1.jpg";
+  productName.textContent = "Autumn Limited Edition...";
+  spanProductInfo.textContent = `$125.00 x ${productsInCart} / `;
+  spanTotalPrice.textContent = totalPrice;
+  iconDelete.src = "../../assets/icon-delete.svg";
+  buttonCheckout.textContent = "Checkout";
+  spanTotalPrice.setAttribute("class", "cart-total-price");
+  buttonCheckout.setAttribute("class", "checkout-button");
+  buttonCheckout.setAttribute("onclick", "Checkout()");
+};
+
+const CreatingElements = () => {
+  buttonDelete.appendChild(iconDelete);
+  modalCartBody.appendChild(divContainer);
+  divContainer.appendChild(imageProduct);
+  divContainer.appendChild(divInfos);
+  divInfos.appendChild(productName);
+  divInfos.appendChild(spanProductInfo);
+  divContainer.appendChild(buttonDelete);
+  spanProductInfo.appendChild(spanTotalPrice);
+  modalCartBody.appendChild(buttonCheckout);
+};
+
+//Checkout.
 const Checkout = () => {
   alert("Pedido realizado!");
   ModalCartControl();
 };
 
-//Scroll
+//Scroll.
 const DisableScroll = () => {
   TopScroll = window.pageYOffset || document.documentElement.scrollTop;
   (LeftScroll = window.pageXOffset || document.documentElement.scrollLeft),
@@ -92,12 +133,14 @@ const EnableScroll = () => {
   window.onscroll = function () {};
 };
 
-//Modal
+//Modal.
 let modal = document.querySelector("#myModalCart");
 let cartButton = document.querySelector(".cart-button");
 let cartModalIsActive = false;
 
 const ModalCartControl = () => {
+  ListProductsInTheCart();
+
   if (!cartModalIsActive) {
     modal.style.display = "block";
     DisableScroll();
@@ -112,6 +155,7 @@ const ModalCartControl = () => {
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
+    cartModalIsActive = false;
     EnableScroll();
   }
 };
