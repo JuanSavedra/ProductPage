@@ -42,7 +42,7 @@ const IncreaseAmountOfProducts = (value) => {
 
 const DecreaseAmountOfProducts = (value) => {
   let amountSpan = document.querySelector(".amount-of-products");
-  if (amount > 0) {
+  if (amount > 1) {
     amountSpan.textContent = amount -= value;
   }
 
