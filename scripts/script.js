@@ -78,9 +78,9 @@ const buttonCheckout = document.createElement("a");
 
 const ListProductsInTheCart = () => {
   let textCart = document.querySelector(".text-cart-modal");
+  modalCartBody.appendChild(textCart);
 
   if (cartIsEmpty) {
-    modalCartBody.appendChild(textCart);
     textCart.textContent = "Your cart is empty.";
   } else {
     textCart.textContent = "";
@@ -88,6 +88,19 @@ const ListProductsInTheCart = () => {
     DefineHTMLElements();
     CreatingElements();
   }
+};
+
+const DeleteProductsInTheCart = () => {
+  buttonDelete.parentNode.removeChild(buttonDelete);
+  divContainer.parentNode.removeChild(divContainer);
+  imageProduct.parentNode.removeChild(imageProduct);
+  divInfos.parentNode.removeChild(divInfos);
+  productName.parentNode.removeChild(productName);
+  spanProductInfo.parentNode.removeChild(spanProductInfo);
+  spanTotalPrice.parentNode.removeChild(spanTotalPrice);
+  buttonCheckout.parentNode.removeChild(buttonCheckout);
+  cartIsEmpty = true;
+  ListProductsInTheCart();
 };
 
 const DefineHTMLElements = () => {
@@ -100,6 +113,7 @@ const DefineHTMLElements = () => {
   spanTotalPrice.setAttribute("class", "cart-total-price");
   buttonCheckout.setAttribute("class", "checkout-button");
   buttonCheckout.setAttribute("onclick", "Checkout()");
+  buttonDelete.setAttribute("onclick", "DeleteProductsInTheCart()");
 };
 
 const CreatingElements = () => {
