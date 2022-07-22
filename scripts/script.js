@@ -64,7 +64,8 @@ const AddToCart = () => {
 
 //Cart Info.
 let cartIsEmpty = true;
-let totalPrice;
+let totalPrice = 0;
+
 const modalCartBody = document.querySelector(".modal-cart-body");
 const divContainer = document.createElement("div");
 const imageProduct = document.createElement("img");
@@ -114,7 +115,10 @@ const DefineHTMLElements = () => {
   imageProduct.src = "../../assets/image-product-1.jpg";
   productName.textContent = "Autumn Limited Edition...";
   spanProductInfo.textContent = `$125.00 x ${productsInCart} / `;
-  spanTotalPrice.textContent = totalPrice;
+  spanTotalPrice.textContent = `${new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(totalPrice)}`;
   iconDelete.src = "../../assets/icon-delete.svg";
   buttonCheckout.textContent = "Checkout";
   spanTotalPrice.setAttribute("class", "cart-total-price");
