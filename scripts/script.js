@@ -91,6 +91,9 @@ const ListProductsInTheCart = () => {
 };
 
 const DeleteProductsInTheCart = () => {
+  const quantityInTheCart = document.querySelector(".quantity-in-cart");
+
+  quantityInTheCart.parentNode.removeChild(quantityInTheCart);
   buttonDelete.parentNode.removeChild(buttonDelete);
   divContainer.parentNode.removeChild(divContainer);
   imageProduct.parentNode.removeChild(imageProduct);
@@ -99,7 +102,11 @@ const DeleteProductsInTheCart = () => {
   spanProductInfo.parentNode.removeChild(spanProductInfo);
   spanTotalPrice.parentNode.removeChild(spanTotalPrice);
   buttonCheckout.parentNode.removeChild(buttonCheckout);
+
   cartIsEmpty = true;
+  productsInCart = 0;
+  amount = 1;
+  amountSpan.textContent = amount;
   ListProductsInTheCart();
 };
 
