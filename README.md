@@ -13,6 +13,7 @@
 - ✔️ Sidebar para o layout mobile.
 - ✔️ Animações nos elementos.
 - ✔️ Checkout.
+- ✔️ Carrosel de imagens.
 
 ## Imagens da aplicação
 <img width="1145" alt="Captura de Tela 2022-07-23 às 13 33 50" src="https://user-images.githubusercontent.com/66082393/180614387-9daca95e-e765-4e32-a33a-34501d35639f.png">
