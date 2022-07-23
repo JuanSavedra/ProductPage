@@ -87,7 +87,7 @@ const ListProductsInTheCart = () => {
   }
 };
 
-function CreateCartModalElements(type, content, src) {
+function CreateElements(type, content, src) {
   let element = document.createElement(type);
   element.textContent = content;
 
@@ -117,34 +117,34 @@ const DeleteProductsInTheCart = () => {
 
 const CreateCartProducts = () => {
   createdElements.push(
-    modalCartBody.appendChild(CreateCartModalElements("div", null, null))
+    modalCartBody.appendChild(CreateElements("div", null, null))
   );
 
   createdElements.push(
     createdElements[0].appendChild(
-      CreateCartModalElements("img", null, "../../assets/image-product-1.jpg")
+      CreateElements("img", null, "../../assets/image-product-1.jpg")
     )
   );
 
   createdElements.push(
-    createdElements[0].appendChild(CreateCartModalElements("div", null, null))
+    createdElements[0].appendChild(CreateElements("div", null, null))
   );
 
   createdElements.push(
     createdElements[2].appendChild(
-      CreateCartModalElements("p", "Autumn Limited Edition...", null)
+      CreateElements("p", "Autumn Limited Edition...", null)
     )
   );
 
   createdElements.push(
     createdElements[2].appendChild(
-      CreateCartModalElements("span", `$125.00 x ${productsInCart} / `, null)
+      CreateElements("span", `$125.00 x ${productsInCart} / `, null)
     )
   );
 
   createdElements.push(
     createdElements[4].appendChild(
-      CreateCartModalElements(
+      CreateElements(
         "span",
         `${new Intl.NumberFormat("en-US", {
           style: "currency",
@@ -156,17 +156,17 @@ const CreateCartProducts = () => {
   );
 
   createdElements.push(
-    createdElements[0].appendChild(CreateCartModalElements("a", null, null))
+    createdElements[0].appendChild(CreateElements("a", null, null))
   );
 
   createdElements.push(
     createdElements[6].appendChild(
-      CreateCartModalElements("img", null, "../../assets/icon-delete.svg")
+      CreateElements("img", null, "../../assets/icon-delete.svg")
     )
   );
 
   createdElements.push(
-    modalCartBody.appendChild(CreateCartModalElements("a", "Checkout", null))
+    modalCartBody.appendChild(CreateElements("a", "Checkout", null))
   );
 
   createdElements[5].setAttribute("class", "cart-total-price");
@@ -246,3 +246,22 @@ window.onclick = function (event) {
     CloseSidebar();
   }
 };
+
+//Responsiveness.
+const navContainer = document.querySelector(".div-nav");
+const menu = document.querySelector(".icon-menu");
+const createdNavElements = [];
+
+const VerifyScreenSize = () => {
+  if (window.innerWidth >= 768) {
+    menu.parentNode.removeChild(menu);
+    navContainer.appendChild(CreateElements("a", "Collections", null));
+    navContainer.appendChild(CreateElements("a", "Men", null));
+    navContainer.appendChild(CreateElements("a", "Women", null));
+    navContainer.appendChild(CreateElements("a", "About", null));
+    navContainer.appendChild(CreateElements("a", "Contact", null));
+  } else {
+  }
+};
+
+VerifyScreenSize();
