@@ -360,6 +360,16 @@ main #Cart button span {
   .product-section .infos {
     width: 50%;
   }
+
+  .modal-cart-content {
+    position: relative;
+    background-color: #fefefe;
+    top: 0;
+    max-width: 620px;
+    border-radius: 8px;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+  }
 }
 
 @keyframes fade {
