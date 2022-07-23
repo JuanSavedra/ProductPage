@@ -250,36 +250,34 @@ window.onclick = function (event) {
 //Responsiveness.
 const navContainer = document.querySelector(".div-nav");
 const menu = document.querySelector(".icon-menu");
+const typeOfNavElements = [
+  { type: "a", content: "Collections", src: null },
+  { type: "a", content: "Men", src: null },
+  { type: "a", content: "Women", src: null },
+  { type: "a", content: "About", src: null },
+  { type: "a", content: "Contact", src: null },
+];
 const createdNavElements = [];
 
 const DesktopLayout = () => {
   if (window.innerWidth >= 768) {
     menu.parentNode.removeChild(menu);
 
-    createdNavElements.push(
-      navContainer.appendChild(CreateElements("a", "Collections", null))
-    );
-
-    createdNavElements.push(
-      navContainer.appendChild(CreateElements("a", "Men", null))
-    );
-
-    createdNavElements.push(
-      navContainer.appendChild(CreateElements("a", "Women", null))
-    );
-
-    createdNavElements.push(
-      navContainer.appendChild(CreateElements("a", "About", null))
-    );
-
-    createdNavElements.push(
-      navContainer.appendChild(CreateElements("a", "Contact", null))
-    );
+    for (let i = 0; i < 5; i++) {
+      createdNavElements.push(
+        navContainer.appendChild(
+          CreateElements(
+            typeOfNavElements[i].type,
+            typeOfNavElements[i].content,
+            typeOfNavElements[i].src
+          )
+        )
+      );
+    }
 
     for (let i = 0; i < createdNavElements.length; i++) {
       createdNavElements[i].setAttribute("class", "navLink");
     }
-  } else {
   }
 };
 
