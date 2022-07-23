@@ -228,10 +228,12 @@ const aside = document.querySelector("aside");
 
 const OpenSidebar = () => {
   aside.style.display = "block";
+  DisableScroll();
 };
 
 const CloseSidebar = () => {
   aside.style.display = "none";
+  EnableScroll();
 };
 
 window.onclick = function (event) {

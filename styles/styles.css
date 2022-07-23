@@ -184,6 +184,10 @@ main #Price div div .original-price {
   color: var(--grayish-blue);
 }
 
+main #Cart {
+  margin-bottom: 2rem;
+}
+
 main #Cart div {
   display: flex;
   align-items: center;
