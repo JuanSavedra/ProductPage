@@ -71,64 +71,76 @@
           </div>
         </nav>
       </header>
-      <section id="Product">
-        <div class="slideshow-container">
-          <div class="mySlides fade">
-            <img class="product-image" src="./assets/image-product-1.jpg" />
-          </div>
-          <div class="mySlides fade">
-            <img class="product-image" src="./assets/image-product-2.jpg" />
-          </div>
-          <div class="mySlides fade">
-            <img class="product-image" src="./assets/image-product-3.jpg" />
-          </div>
-          <div class="mySlides fade">
-            <img class="product-image" src="./assets/image-product-4.jpg" />
-          </div>
-          <a class="prev" onclick="PlusSlides(-1)"
-            ><img src="./assets/icon-previous.svg" alt="Previous"
-          /></a>
-          <a class="next" onclick="PlusSlides(1)"
-            ><img src="./assets/icon-next.svg" alt="Next"
-          /></a>
+      <section class="product-section container">
+        <div class="carousel">
+          <section id="Product">
+            <div class="slideshow-container">
+              <div class="mySlides fade">
+                <img class="product-image" src="./assets/image-product-1.jpg" />
+              </div>
+              <div class="mySlides fade">
+                <img class="product-image" src="./assets/image-product-2.jpg" />
+              </div>
+              <div class="mySlides fade">
+                <img class="product-image" src="./assets/image-product-3.jpg" />
+              </div>
+              <div class="mySlides fade">
+                <img class="product-image" src="./assets/image-product-4.jpg" />
+              </div>
+              <a class="prev" onclick="PlusSlides(-1)"
+                ><img src="./assets/icon-previous.svg" alt="Previous"
+              /></a>
+              <a class="next" onclick="PlusSlides(1)"
+                ><img src="./assets/icon-next.svg" alt="Next"
+              /></a>
+            </div>
+            <br />
+          </section>
         </div>
-        <br />
-      </section>
-      <section id="Infos" class="container">
-        <p class="orange">sneaker company</p>
-        <h1>Fall limited Edition Sneakers</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet
-          nostrum commodi cupiditate a. Ullam iusto in beatae facere fugiat?
-          Perferendis blanditiis distinctio corrupti molestias! Qui laudantium
-          minus amet deleniti distinctio!
-        </p>
-      </section>
-      <section id="Price" class="container">
-        <div>
-          <div>
-            <span>$125.00</span>
-            <span class="descount">50%</span>
-          </div>
-          <div>
-            <span class="original-price">$225.00</span>
-          </div>
+        <div class="infos">
+          <section id="Infos" class="container">
+            <p class="orange">sneaker company</p>
+            <h1>Fall limited Edition Sneakers</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet
+              nostrum commodi cupiditate a. Ullam iusto in beatae facere fugiat?
+              Perferendis blanditiis distinctio corrupti molestias! Qui
+              laudantium minus amet deleniti distinctio!
+            </p>
+          </section>
+          <section id="Price" class="container">
+            <div>
+              <div>
+                <span>$125.00</span>
+                <span class="descount">50%</span>
+              </div>
+              <div>
+                <span class="original-price">$225.00</span>
+              </div>
+            </div>
+          </section>
+          <section id="Cart" class="container">
+            <div>
+              <a
+                href="javascript:void(0);"
+                onclick="DecreaseAmountOfProducts(1)"
+              >
+                <img src="./assets/icon-minus.svg" alt="Minus" />
+              </a>
+              <span class="amount-of-products">1</span>
+              <a
+                href="javascript:void(0);"
+                onclick="IncreaseAmountOfProducts(1)"
+              >
+                <img src="./assets/icon-plus.svg" alt="Plus" />
+              </a>
+            </div>
+            <button class="add-to-cart" onclick="AddToCart()">
+              <img src="./assets/icon-cart.svg" alt="Cart" />
+              <span>Add to cart</span>
+            </button>
+          </section>
         </div>
-      </section>
-      <section id="Cart" class="container">
-        <div>
-          <a href="javascript:void(0);" onclick="DecreaseAmountOfProducts(1)">
-            <img src="./assets/icon-minus.svg" alt="Minus" />
-          </a>
-          <span class="amount-of-products">1</span>
-          <a href="javascript:void(0);" onclick="IncreaseAmountOfProducts(1)">
-            <img src="./assets/icon-plus.svg" alt="Plus" />
-          </a>
-        </div>
-        <button class="add-to-cart" onclick="AddToCart()">
-          <img src="./assets/icon-cart.svg" alt="Cart" />
-          <span>Add to cart</span>
-        </button>
       </section>
     </main>
     <script src="./scripts/script.js"></script>
