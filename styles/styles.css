@@ -66,8 +66,13 @@ aside section header {
   margin-bottom: 3rem;
 }
 
-aside section header img {
+aside section header a img {
   width: 20px;
+  transition: width 0.2s;
+}
+
+aside section header a img:hover {
+  width: 24px;
 }
 
 aside section main ul {
@@ -96,8 +101,25 @@ header nav {
 }
 
 header nav div img:first-child {
-  margin-top: 3px;
   padding: 0 0.5rem;
+  margin: 0 0.5rem;
+  width: 38px;
+  transition: width 0.2s;
+}
+
+header nav div a .icon-menu {
+  padding: 0 0.5rem;
+  margin: 0 0.5rem;
+  height: 16px;
+  transition: height 0.2s;
+}
+
+header nav div a .icon-menu:hover {
+  height: 18px;
+}
+
+header nav div a img:first-child:hover {
+  width: 40px;
 }
 
 header nav div {
@@ -107,7 +129,7 @@ header nav div {
 }
 
 header nav div:last-child .avatar {
-  width: 30%;
+  width: 42px;
 }
 
 main #Product .slideshow-container {
@@ -217,6 +239,15 @@ main #Cart div {
   background-color: var(--light-grayish-blue);
   padding: 1.5rem 2rem;
   border-radius: 8px;
+}
+
+main #Cart div a img {
+  width: 12px;
+  transition: width 0.2s;
+}
+
+main #Cart div a img:hover {
+  width: 14px;
 }
 
 main #Cart button {

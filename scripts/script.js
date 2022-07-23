@@ -252,7 +252,7 @@ const navContainer = document.querySelector(".div-nav");
 const menu = document.querySelector(".icon-menu");
 const createdNavElements = [];
 
-const VerifyScreenSize = () => {
+const DesktopLayout = () => {
   if (window.innerWidth >= 768) {
     menu.parentNode.removeChild(menu);
 
@@ -283,4 +283,4 @@ const VerifyScreenSize = () => {
   }
 };
 
-VerifyScreenSize();
+DesktopLayout();
