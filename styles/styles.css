@@ -30,7 +30,7 @@
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--dark-grayish-blue);
-  gap: 2rem;
+  gap: 0rem;
 }
 
 .div-nav .navLink:hover {
@@ -283,7 +283,7 @@ main #Cart button span {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
   background-color: var(--black);
 }
 
@@ -301,7 +301,7 @@ main #Cart button span {
   position: relative;
   background-color: #fefefe;
   margin: 25% auto;
-  max-width: 400px;
+  max-width: 422px;
   border-radius: 8px;
   animation-name: animatetop;
   animation-duration: 0.4s;
@@ -321,7 +321,7 @@ main #Cart button span {
 .modal-cart-body div {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 2rem;
 }
 
@@ -407,6 +407,10 @@ main #Cart button span {
     border-radius: 8px;
     animation-name: animatetop;
     animation-duration: 0.4s;
+  }
+
+  .div-nav {
+    gap: 2rem;
   }
 }
 

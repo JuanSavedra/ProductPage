@@ -59,6 +59,7 @@ const AddToCart = () => {
   textOfProductsInCart.setAttribute("class", "quantity-in-cart");
   cart.appendChild(textOfProductsInCart);
   cartIsEmpty = false;
+  alert("Product added successfully!");
   ListProductsInTheCart();
 };
 
@@ -177,11 +178,13 @@ const CreateCartProducts = () => {
 };
 
 const RefreshCart = () => {
-  totalPrice = 125.0 * productsInCart;
-  createdElements[5].textContent = `${new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  }).format(totalPrice)}`;
+  for (let i = 0; i < createdElements.length; i++) {
+    createdElements[i].parentNode.removeChild(createdElements[i]);
+  }
+
+  createdElements = [];
+
+  CreateCartProducts();
 };
 
 //Checkout.
