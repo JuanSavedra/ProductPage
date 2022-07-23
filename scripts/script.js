@@ -12,7 +12,6 @@ const CurrentSlide = (n) => {
 const ShowSlides = (n) => {
   let i;
   let slides = document.querySelectorAll(".mySlides");
-  let dots = document.querySelectorAll(".dot");
 
   if (n > slides.length) {
     slideIndex = 1;
@@ -229,5 +228,23 @@ window.onclick = function (event) {
     modal.style.display = "none";
     cartModalIsActive = false;
     EnableScroll();
+  }
+};
+
+//Sidebar.
+const aside = document.querySelector("aside");
+
+const OpenSidebar = () => {
+  aside.style.display = "block";
+};
+
+const CloseSidebar = () => {
+  aside.style.display = "none";
+};
+
+window.onclick = function (event) {
+  if (event.target == aside) {
+    modal.style.display = "none";
+    CloseSidebar();
   }
 };

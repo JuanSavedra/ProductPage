@@ -30,29 +30,47 @@
         </div>
       </div>
     </div>
-    <header class="container">
-      <nav>
-        <div>
-          <a href="javascript:void(0);">
-            <img src="./assets/icon-menu.svg" alt="Menu" />
+    <aside>
+      <section>
+        <header>
+          <a href="javascript:void(0);" onclick="CloseSidebar()">
+            <img src="./assets/icon-close.svg" alt="Close" />
           </a>
-          <img src="./assets/logo.svg" alt="Logo" />
-        </div>
-        <div>
-          <div class="cart-container">
-            <a
-              class="cart-button"
-              href="javascript:void(0);"
-              onclick="ModalCartControl()"
-            >
-              <img src="./assets/icon-cart.svg" alt="Cart" />
-            </a>
-          </div>
-          <img class="avatar" src="./assets/image-avatar.png" alt="Avatar" />
-        </div>
-      </nav>
-    </header>
+        </header>
+        <main>
+          <ul>
+            <li>Collections</li>
+            <li>Men</li>
+            <li>Women</li>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        </main>
+      </section>
+    </aside>
     <main>
+      <header class="container">
+        <nav>
+          <div>
+            <a href="javascript:void(0);" onclick="OpenSidebar()">
+              <img src="./assets/icon-menu.svg" alt="Menu" />
+            </a>
+            <img src="./assets/logo.svg" alt="Logo" />
+          </div>
+          <div>
+            <div class="cart-container">
+              <a
+                class="cart-button"
+                href="javascript:void(0);"
+                onclick="ModalCartControl()"
+              >
+                <img src="./assets/icon-cart.svg" alt="Cart" />
+              </a>
+            </div>
+            <img class="avatar" src="./assets/image-avatar.png" alt="Avatar" />
+          </div>
+        </nav>
+      </header>
       <section id="Product">
         <div class="slideshow-container">
           <div class="mySlides fade">
