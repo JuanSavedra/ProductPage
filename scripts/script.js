@@ -255,11 +255,30 @@ const createdNavElements = [];
 const VerifyScreenSize = () => {
   if (window.innerWidth >= 768) {
     menu.parentNode.removeChild(menu);
-    navContainer.appendChild(CreateElements("a", "Collections", null));
-    navContainer.appendChild(CreateElements("a", "Men", null));
-    navContainer.appendChild(CreateElements("a", "Women", null));
-    navContainer.appendChild(CreateElements("a", "About", null));
-    navContainer.appendChild(CreateElements("a", "Contact", null));
+
+    createdNavElements.push(
+      navContainer.appendChild(CreateElements("a", "Collections", null))
+    );
+
+    createdNavElements.push(
+      navContainer.appendChild(CreateElements("a", "Men", null))
+    );
+
+    createdNavElements.push(
+      navContainer.appendChild(CreateElements("a", "Women", null))
+    );
+
+    createdNavElements.push(
+      navContainer.appendChild(CreateElements("a", "About", null))
+    );
+
+    createdNavElements.push(
+      navContainer.appendChild(CreateElements("a", "Contact", null))
+    );
+
+    for (let i = 0; i < createdNavElements.length; i++) {
+      createdNavElements[i].setAttribute("class", "navLink");
+    }
   } else {
   }
 };

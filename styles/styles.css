@@ -34,6 +34,10 @@
   gap: 2rem;
 }
 
+.div-nav .navLink:hover {
+  border-bottom: 2px solid var(--orange);
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -78,6 +82,10 @@ aside section main ul li a {
   font-size: 1.5rem;
   font-weight: 700;
   color: #000000;
+}
+
+aside section main ul li a:hover {
+  border-bottom: 2px solid var(--orange);
 }
 
 header nav {
@@ -364,7 +372,7 @@ main #Cart button span {
   .modal-cart-content {
     position: relative;
     background-color: #fefefe;
-    top: 0;
+    bottom: 25%;
     max-width: 620px;
     border-radius: 8px;
     animation-name: animatetop;
