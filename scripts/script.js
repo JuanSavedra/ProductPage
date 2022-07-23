@@ -223,14 +223,6 @@ const ModalCartControl = () => {
   cartModalIsActive = !cartModalIsActive;
 };
 
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-    cartModalIsActive = false;
-    EnableScroll();
-  }
-};
-
 //Sidebar.
 const aside = document.querySelector("aside");
 
@@ -243,8 +235,12 @@ const CloseSidebar = () => {
 };
 
 window.onclick = function (event) {
-  if (event.target == aside) {
+  if (event.target == modal) {
     modal.style.display = "none";
+    cartModalIsActive = false;
+    EnableScroll();
+  } else if (event.target == aside) {
+    aside.style.display = "none";
     CloseSidebar();
   }
 };
